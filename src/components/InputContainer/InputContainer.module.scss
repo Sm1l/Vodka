@@ -1,0 +1,69 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+
+  width: 100%;
+}
+
+.input {
+  display: block;
+
+  width: 100%;
+  height: 42px;
+  padding: 10px 20px;
+
+  border: none;
+  border-bottom: 2px solid var(--color-violet);
+  border-radius: 30px;
+
+  background-color: inherit;
+
+  transition: box-shadow 300ms ease-out;
+}
+
+.inputError {
+  position: relative;
+
+  border-bottom: 2px solid var(--color-lavender);
+}
+
+.input:focus {
+  border-bottom: 2px solid var(--color-lavender);
+
+  outline: none;
+
+  box-shadow: var(--shadow-lavender);
+}
+
+.error {
+  width: 100%;
+  height: 20px;
+
+  text-align: left;
+}
+
+.error span {
+  color: var(--color-lavender);
+  font-size: 12px;
+}
+
+// убрать стрелки input[type="number"]
+.input[type="number"]::-webkit-outer-spin-button,
+.input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.input[type="number"],
+.input[type="number"]:hover,
+.input[type="number"]:focus {
+  appearance: none;
+  appearance: textfield;
+}
+
+@media (width >= 768px) {
+  .input {
+    height: 52px;
+  }
+}

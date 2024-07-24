@@ -7,13 +7,12 @@ import { Main } from "@/components/Main";
 
 import "./globals.scss";
 import "../assets/variables.scss";
-import { Container } from "@/components/Container";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Vodka",
-  description: "Vodka application",
+  description: "Vodka Hedin's vodka",
 };
 
 export default function RootLayout({
@@ -22,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={inter.className}>
         <Header />
         <Main>{children}</Main>
