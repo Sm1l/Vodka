@@ -7,7 +7,7 @@ interface WelcomeProps {}
 const Welcome: React.FC<WelcomeProps> = () => {
   return (
     <div className={styles.welcome}>
-      <h1>Водочка Хедина</h1>
+      <h1 className={styles.title}>Водочка Хедина</h1>
     </div>
   );
 };

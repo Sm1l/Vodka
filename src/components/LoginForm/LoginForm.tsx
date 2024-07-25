@@ -4,27 +4,27 @@ import { HEDIN_ID } from "@/app/data/hedin";
 
 import { loginWithFirebase } from "@/firebase/loginWithFirebase";
 import { InputContainer } from "../InputContainer";
-import styles from "./Form.module.scss";
+import styles from "./LoginForm.module.scss";
 import { Button } from "../Button";
 
-export type TForm = {
+export type TLoginForm = {
   email: string;
   password: string;
 };
 
-interface FormProps {
+interface LoginFormProps {
   setIsHedin: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Form: React.FC<FormProps> = ({ setIsHedin }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ setIsHedin }) => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isValid },
-  } = useForm<TForm>({ mode: "onBlur" });
+  } = useForm<TLoginForm>({ mode: "onBlur" });
 
-  const onSubmit: SubmitHandler<TForm> = async (data) => {
+  const onSubmit: SubmitHandler<TLoginForm> = async (data) => {
     const result = await loginWithFirebase(data.email, data.password);
     if (result.error) {
       alert(`Ошибка: ${result.error}`);
@@ -38,7 +38,7 @@ const Form: React.FC<FormProps> = ({ setIsHedin }) => {
   };
 
   return (
-    <form className={styles.adminForm} onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.loginForm} onSubmit={handleSubmit(onSubmit)}>
       <InputContainer
         inputName="Электронная почта"
         inputId="email"
@@ -67,9 +67,9 @@ const Form: React.FC<FormProps> = ({ setIsHedin }) => {
         })}
         error={errors.password}
       />
-      <Button type="submit" text="Войти" arrow={true} disabled={!isValid} />
+      <Button type="submit" text="Войти" arrow={false} disabled={!isValid} />
     </form>
   );
 };
 
-export { Form };
+export { LoginForm };

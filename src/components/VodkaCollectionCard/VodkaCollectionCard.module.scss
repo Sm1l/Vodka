@@ -1,0 +1,12 @@
+.vodkaCollectionCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-left: 2px solid var(--clr-blue-l);
+  border-right: 2px solid var(--clr-blue-l);
+  border-top: 1px dashed var(--clr-blue-l);
+  border-bottom: 1px dashed var(--clr-blue-l);
+  border-radius: var(--brdr-rad);
+}

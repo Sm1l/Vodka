@@ -4,7 +4,7 @@ import styles from "./InputContainer.module.scss";
 interface InputContainerProps {
   inputName: string;
   inputId: string;
-  inputType: string;
+  inputType: "email" | "password" | "text" | "number";
   inputPlaceholder: string;
   autoComplete: "off" | "on" | "current-password";
   register: UseFormRegisterReturn;

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import styles from "./HomeContainer.module.scss";
 import { Welcome } from "../Welcome";
 import { Login } from "../Login";
+import { Vodka } from "../Vodka";
 
 interface HomeContainerProps {}
 
@@ -12,7 +13,8 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
   return (
     <div className={styles.homeContainer}>
       <Welcome />
-      {isHedin ? <div>Hello, Hedin!</div> : <Login setIsHedin={setIsHedin} />}
+      {!isHedin ? <Vodka /> : <Login setIsHedin={setIsHedin} />}
+      {/* //!change ! */}
     </div>
   );
 };

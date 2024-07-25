@@ -1,0 +1,16 @@
+.vodkaCollection {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  width: 100%;
+  min-height: 100%;
+}
+
+.vodkaCollectionCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  width: 100%;
+}

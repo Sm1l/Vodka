@@ -12,17 +12,17 @@ body {
 
   width: 100%;
   min-height: 100dvh;
+  color: var(--clr-blue-d);
 
-  color: var(--color-white);
   font-weight: 300;
   font-family: Gilroy, system-ui, sans-serif; /* Основной шрифт */
 
-  background-color: var(--color-gray);
+  background-color: var(--clr-white);
 
   @media (hover: hover) {
     a {
       &:hover {
-        color: var(--color-lavender);
+        color: var(--clr-blue-l);
 
         transition: all 300ms ease-out;
       }
@@ -93,7 +93,7 @@ body {
 
   @media (hover: hover) {
     button:focus {
-      outline: 1px dotted var(--color-lavender);
+      outline: 1px dotted var(--clr-blue-l);
     }
   }
 
@@ -161,7 +161,7 @@ body {
     text-decoration: none;
 
     &:focus {
-      outline: 1px dotted var(--color-lavender);
+      outline: 1px dotted var(--clr-blue-l);
     }
   }
 }
