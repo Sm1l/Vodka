@@ -52,6 +52,7 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
             inputType="text"
             register={register("brand", {
               required: "Это поле обязательно",
+              pattern: { value: /^[A-ZА-Я0-9][a-zA-Zа-яА-Я0-9]*$/, message: "Первая буква заглавная" },
             })}
             error={errors.brand}
           />
@@ -61,7 +62,9 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
             inputPlaceholder="Введите название (необязательное поле)"
             autoComplete="off"
             inputType="text"
-            register={register("name", {})}
+            register={register("name", {
+              pattern: { value: /^[A-ZА-Я0-9][a-zA-Zа-яА-Я0-9]*$/, message: "Первая буква заглавная" },
+            })}
             error={errors.name}
           />
           <InputContainer
@@ -73,6 +76,7 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
             register={register("producer", {
               required: "Это поле обязательно",
               minLength: { value: 4, message: "Минимум 4 символа" },
+              pattern: { value: /^[A-ZА-Я0-9][a-zA-Zа-яА-Я0-9]*$/, message: "Первая буква заглавная" },
             })}
             error={errors.producer}
           />
@@ -85,6 +89,11 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
             inputType="text"
             register={register("city", {
               required: "Это поле обязательно",
+
+              pattern: {
+                value: /^[A-ZА-Я][a-zA-Zа-яА-Я]*(\s[a-zA-Zа-яА-Я]+)*$/,
+                message: "Только буквы, первая заглавная",
+              },
               minLength: { value: 2, message: "Минимум 2 символа" },
             })}
             error={errors.city}

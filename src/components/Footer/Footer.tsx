@@ -8,7 +8,9 @@ interface FooterProps {}
 const Footer: React.FC<FooterProps> = () => {
   return (
     <footer className={styles.footer}>
-      <Container>Footer Component</Container>
+      <Container>
+        <p>© 2024 Водочка Хедина</p>
+      </Container>
     </footer>
   );
 };

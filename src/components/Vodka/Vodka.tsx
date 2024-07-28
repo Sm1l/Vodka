@@ -7,19 +7,19 @@ import { VodkaCollection } from "../VodkaCollection/VodkaCollection";
 interface VodkaProps {}
 
 const Vodka: React.FC<VodkaProps> = () => {
-  const [screen, setScreen] = useState<"table" | "new">("table");
+  const [screen, setScreen] = useState<"collection" | "new">("collection");
   return (
     <section className={styles.vodka}>
       <div>
         <input
           type="checkbox"
           id="vodka_checkbox"
-          onChange={() => setScreen(screen === "table" ? "new" : "table")}
-          checked={screen === "table"}
+          onChange={() => setScreen(screen === "collection" ? "new" : "collection")}
+          checked={screen === "collection"}
           name="vodka_checkbox"
         />
       </div>
-      {screen === "table" ? <VodkaCollection /> : <NewVodka />}
+      {screen === "collection" ? <VodkaCollection /> : <NewVodka />}
     </section>
   );
 };

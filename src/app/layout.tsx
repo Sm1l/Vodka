@@ -11,8 +11,8 @@ import "../assets/variables.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Vodka",
-  description: "Vodka Hedin's vodka",
+  title: "Hedin's vodka",
+  description: " Hedin's vodka",
 };
 
 export default function RootLayout({

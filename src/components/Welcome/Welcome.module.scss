@@ -1,6 +1,10 @@
 .welcome {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
 }
 
 .title {
-  font-weight: 600;
+  font-weight: 400;
 }

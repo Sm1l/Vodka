@@ -18,7 +18,7 @@ const SelectContainer: React.FC<SelectContainerProps> = ({ inputId, inputName, r
       <label htmlFor={inputId}>{inputName}</label>
       <select className={`${styles.select} ${error ? styles.selectError : null}`} {...register} id={inputId}>
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option key={option.value} value={option.name}>
             {option.name}
           </option>
         ))}

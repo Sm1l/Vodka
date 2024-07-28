@@ -1,12 +1,30 @@
 .vodkaCollectionCard {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
+  align-items: flex-start;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
   border-left: 2px solid var(--clr-blue-l);
   border-right: 2px solid var(--clr-blue-l);
   border-top: 1px dashed var(--clr-blue-l);
   border-bottom: 1px dashed var(--clr-blue-l);
   border-radius: var(--brdr-rad);
+  padding: 4px 8px;
+  width: 100%;
+  height: 100%;
+  text-align: start;
+}
+.vodkaInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  text-align: start;
+  overflow: hidden;
+}
+
+.miniTitle {
+  font-weight: 500;
 }
