@@ -14,9 +14,9 @@ interface CardButtonsContainerProps {
 const CardButtonsContainer: React.FC<CardButtonsContainerProps> = ({ vodka, setCollectionIsChanged }) => {
   const [deleteModal, setDeleteModal] = useState(false);
 
-  const handleButtonDeleteClick = (id: string) => {
+  const handleButtonDeleteClick = async (id: string) => {
     console.log("Удалить водку с id:", vodka.id);
-    deleteDataFromFirebase(id);
+    await deleteDataFromFirebase(id);
     setDeleteModal(false);
     setCollectionIsChanged((state) => !state);
   };
