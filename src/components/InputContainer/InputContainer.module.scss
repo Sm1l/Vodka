@@ -15,35 +15,35 @@
   padding: 8px 8px;
 
   border: none;
-  border-left: 2px solid var(--clr-blue-l);
-  border-right: 2px solid var(--clr-blue-l);
   border-top: 1px dashed var(--clr-blue-l);
+  border-right: 2px solid var(--clr-blue-l);
   border-bottom: 1px dashed var(--clr-blue-l);
+  border-left: 2px solid var(--clr-blue-l);
   border-radius: var(--brdr-rad);
 
   background-color: inherit;
 
   transition: box-shadow 300ms ease-out;
-  &::placeholder {
-    font-size: 12px;
 
+  &::placeholder {
     color: var(--clr-blue-l);
+    font-size: 12px;
   }
 }
 
 .inputError {
   position: relative;
 
-  border-left: 2px solid var(--clr-red);
-  border-right: 2px solid var(--clr-red);
   border-top: 1px dashed var(--clr-red);
+  border-right: 2px solid var(--clr-red);
   border-bottom: 1px dashed var(--clr-red);
+  border-left: 2px solid var(--clr-red);
 }
 
 .input:focus {
   border-top: 2px solid var(--clr-blue);
-  border-bottom: 2px solid var(--clr-blue);
   border-right: 2px solid var(--clr-blue);
+  border-bottom: 2px solid var(--clr-blue);
   border-left: 2px solid var(--clr-blue);
 
   outline: none;
@@ -58,6 +58,7 @@
 
 .error span {
   display: block;
+
   color: var(--clr-red);
   font-size: 10px;
 }

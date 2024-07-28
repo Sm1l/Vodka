@@ -12,8 +12,8 @@ body {
 
   width: 100%;
   min-height: 100dvh;
-  color: var(--clr-blue-d);
 
+  color: var(--clr-blue-d);
   font-weight: 300;
   font-family: Gilroy, system-ui, sans-serif; /* Основной шрифт */
 
@@ -39,30 +39,6 @@ body {
     html {
       color-scheme: dark;
     }
-  }
-
-  h1 {
-    font-size: 40px;
-  }
-
-  h2 {
-    font-size: 30px;
-  }
-
-  h3 {
-    font-size: 24px;
-  }
-
-  p,
-  button,
-  input,
-  ul,
-  li {
-    font-size: 17px;
-  }
-
-  span {
-    font-size: 16px;
   }
 
   @media (width >= 768px) {
@@ -95,6 +71,30 @@ body {
     button:focus {
       outline: 1px dotted var(--clr-blue-l);
     }
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  p,
+  button,
+  input,
+  ul,
+  li {
+    font-size: 17px;
+  }
+
+  span {
+    font-size: 16px;
   }
 
   html {

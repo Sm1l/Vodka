@@ -1,0 +1,51 @@
+.toggleSwitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.label {
+  margin: 0 10px;
+
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+.switchContainer {
+  position: relative;
+
+  width: 48px;
+  height: 24px;
+
+  border-radius: 4px;
+
+  background-color: var(--clr-blue);
+
+  transition: background-color 0.2s;
+}
+
+.slider {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 4px;
+
+  background-color: var(--clr-white);
+
+  transition: transform 0.2s;
+}
+
+.checked {
+  background-color: var(--clr-white);
+
+  transform: translateX(24px);
+}

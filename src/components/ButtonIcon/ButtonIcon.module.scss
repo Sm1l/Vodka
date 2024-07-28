@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
 
+  width: 100%;
   padding: 4px;
 
   border: 2px solid var(--clr-blue);
@@ -11,6 +12,18 @@
   aspect-ratio: 1 / 1;
 
   transition: all 300ms ease-out;
+}
+
+.white {
+  background-color: var(--clr-white);
+}
+
+.red {
+  background-color: var(--clr-red-l);
+}
+
+.green {
+  background-color: var(--clr-green-l);
 }
 
 @media (hover: hover) {

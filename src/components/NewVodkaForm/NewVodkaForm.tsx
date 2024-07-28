@@ -23,6 +23,8 @@ interface NewVodkaFormProps {}
 
 const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
   const [dataIsSent, setDataIsSent] = useState<boolean>(false);
+  const REG_EXP_FIRST_LETTER_CAPITAL = /^[A-ZА-ЯЁ0-9][a-zA-Zа-яёА-ЯЁ0-9]*(\s+[a-zA-Zа-яёА-ЯЁ0-9]+)*$/;
+  const REG_EXP_FIRST_LETTER_CAPITAL_ONLY_LETTERS = /^[A-ZА-Я][a-zA-Zа-яА-Я]*(\s[a-zA-Zа-яА-Я]+)*$/;
   const {
     register,
     handleSubmit,
@@ -52,7 +54,7 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
             inputType="text"
             register={register("brand", {
               required: "Это поле обязательно",
-              pattern: { value: /^[A-ZА-Я0-9][a-zA-Zа-яА-Я0-9]*$/, message: "Первая буква заглавная" },
+              pattern: { value: REG_EXP_FIRST_LETTER_CAPITAL, message: "Первая буква заглавная" },
             })}
             error={errors.brand}
           />
@@ -63,7 +65,7 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
             autoComplete="off"
             inputType="text"
             register={register("name", {
-              pattern: { value: /^[A-ZА-Я0-9][a-zA-Zа-яА-Я0-9]*$/, message: "Первая буква заглавная" },
+              pattern: { value: REG_EXP_FIRST_LETTER_CAPITAL, message: "Первая буква заглавная" },
             })}
             error={errors.name}
           />
@@ -76,7 +78,7 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
             register={register("producer", {
               required: "Это поле обязательно",
               minLength: { value: 4, message: "Минимум 4 символа" },
-              pattern: { value: /^[A-ZА-Я0-9][a-zA-Zа-яА-Я0-9]*$/, message: "Первая буква заглавная" },
+              pattern: { value: REG_EXP_FIRST_LETTER_CAPITAL, message: "Первая буква заглавная" },
             })}
             error={errors.producer}
           />
@@ -91,7 +93,7 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
               required: "Это поле обязательно",
 
               pattern: {
-                value: /^[A-ZА-Я][a-zA-Zа-яА-Я]*(\s[a-zA-Zа-яА-Я]+)*$/,
+                value: REG_EXP_FIRST_LETTER_CAPITAL_ONLY_LETTERS,
                 message: "Только буквы, первая заглавная",
               },
               minLength: { value: 2, message: "Минимум 2 символа" },
