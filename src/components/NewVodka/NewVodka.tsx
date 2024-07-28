@@ -1,7 +1,6 @@
 import React from "react";
 
 import styles from "./NewVodka.module.scss";
-import { Form } from "react-hook-form";
 import { NewVodkaForm } from "../NewVodkaForm";
 
 interface NewVodkaProps {}
