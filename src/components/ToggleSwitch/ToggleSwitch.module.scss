@@ -25,6 +25,7 @@
   border-radius: 4px;
 
   background-color: var(--clr-blue);
+  background-image: var(--bgr-img-b);
 
   transition: background-color 0.2s;
 }
@@ -39,13 +40,13 @@
 
   border-radius: 4px;
 
-  background-color: var(--clr-white);
+  background-image: var(--bgr-img-w);
 
   transition: transform 0.2s;
 }
 
 .checked {
-  background-color: var(--clr-white);
+  background-image: var(--bgr-img-w);
 
   transform: translateX(24px);
 }
