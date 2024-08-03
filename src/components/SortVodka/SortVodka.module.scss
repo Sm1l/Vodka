@@ -1,0 +1,32 @@
+.sortVodka {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+
+  text-align: start;
+}
+
+.select {
+  height: 42px;
+  padding: 8px 0px;
+
+  color: var(--clr-blue);
+
+  border: none;
+  border: 2px solid transparent;
+
+  background-color: inherit;
+
+  transition: box-shadow 300ms ease-out;
+
+  &:focus {
+    border-top: 2px solid var(--clr-blue);
+    border-right: 2px solid var(--clr-blue);
+    border-bottom: 2px solid var(--clr-blue);
+    border-left: 2px solid var(--clr-blue);
+
+    outline: none;
+  }
+}
