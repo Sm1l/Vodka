@@ -10,8 +10,10 @@ interface VodkaCollectionProps {}
 const VodkaCollection: React.FC<VodkaCollectionProps> = () => {
   const [vodkaCollection, setVodkaCollection] = useState<TVodkaCollection[] | []>([]);
   const [sortedVodkaCollection, setSortedVodkaCollection] = useState<TVodkaCollection[] | []>([]);
+  const [filteredVodkaCollection, setFilteredVodkaCollection] = useState<TVodkaCollection[] | []>([]);
   const [loading, setLoading] = useState(true);
   const [collectionIsChanged, setCollectionIsChanged] = useState<boolean>(false);
+
   const getVodkaCollection = async () => {
     try {
       const res = await getDataFromFirebase();
@@ -41,10 +43,15 @@ const VodkaCollection: React.FC<VodkaCollectionProps> = () => {
         <p>Подожди немного, я уже загружаю твою коллекцию водочки...</p>
       ) : (
         <>
-          <VodkaControlPanel vodkaCollection={vodkaCollection} setSortedVodkaCollection={setSortedVodkaCollection} />
+          <VodkaControlPanel
+            vodkaCollection={vodkaCollection}
+            sortedVodkaCollection={sortedVodkaCollection}
+            setSortedVodkaCollection={setSortedVodkaCollection}
+            setFilteredVodkaCollection={setFilteredVodkaCollection}
+          />
           <VodkaCollectionCards
+            filteredVodkaCollection={filteredVodkaCollection}
             setCollectionIsChanged={setCollectionIsChanged}
-            vodkaCollection={sortedVodkaCollection}
           />
         </>
       )}

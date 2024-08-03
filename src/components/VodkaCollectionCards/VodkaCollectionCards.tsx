@@ -5,16 +5,19 @@ import { TVodkaCollection } from "@/firebase/saveDataToFirebase";
 import { VodkaCollectionCard } from "../VodkaCollectionCard";
 
 interface VodkaCollectionCardsProps {
-  vodkaCollection: TVodkaCollection[];
+  filteredVodkaCollection: TVodkaCollection[];
   setCollectionIsChanged: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const VodkaCollectionCards: React.FC<VodkaCollectionCardsProps> = ({ vodkaCollection, setCollectionIsChanged }) => {
+const VodkaCollectionCards: React.FC<VodkaCollectionCardsProps> = ({
+  filteredVodkaCollection,
+  setCollectionIsChanged,
+}) => {
   return (
     <div className={styles.vodkaCollectionCards}>
-      {vodkaCollection.length > 0 ? (
+      {filteredVodkaCollection.length > 0 ? (
         <>
-          {vodkaCollection?.map((vodka) => (
+          {filteredVodkaCollection?.map((vodka) => (
             <VodkaCollectionCard vodka={vodka} key={vodka.id} setCollectionIsChanged={setCollectionIsChanged} />
           ))}
         </>

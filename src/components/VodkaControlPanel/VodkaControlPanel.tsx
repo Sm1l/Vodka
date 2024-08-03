@@ -7,15 +7,25 @@ import { TVodkaCollection } from "@/firebase/saveDataToFirebase";
 
 interface VodkaControlPanelProps {
   vodkaCollection: TVodkaCollection[];
+  sortedVodkaCollection: TVodkaCollection[];
   setSortedVodkaCollection: React.Dispatch<React.SetStateAction<TVodkaCollection[] | []>>;
+  setFilteredVodkaCollection: React.Dispatch<React.SetStateAction<TVodkaCollection[] | []>>;
 }
 
-const VodkaControlPanel: React.FC<VodkaControlPanelProps> = ({ vodkaCollection, setSortedVodkaCollection }) => {
+const VodkaControlPanel: React.FC<VodkaControlPanelProps> = ({
+  vodkaCollection,
+  sortedVodkaCollection,
+  setSortedVodkaCollection,
+  setFilteredVodkaCollection,
+}) => {
   return (
     <>
       {vodkaCollection.length > 0 && (
         <div className={styles.vodkaControlPanel}>
-          <SearchVodka />
+          <SearchVodka
+            sortedVodkaCollection={sortedVodkaCollection}
+            setFilteredVodkaCollection={setFilteredVodkaCollection}
+          />
           <SortVodka vodkaCollection={vodkaCollection} setSortedVodkaCollection={setSortedVodkaCollection} />
         </div>
       )}

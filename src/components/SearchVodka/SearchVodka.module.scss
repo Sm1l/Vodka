@@ -1,1 +1,62 @@
-.searchVodka {}
+.searchVodka {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  display: block;
+
+  width: 100%;
+  height: 32px;
+  padding: 4px 8px;
+
+  border: none;
+  border-top: 1px dashed var(--clr-blue-l);
+  border-right: 2px solid var(--clr-blue-l);
+  border-bottom: 1px dashed var(--clr-blue-l);
+  border-left: 2px solid var(--clr-blue-l);
+  border-radius: var(--brdr-rad);
+
+  background-color: inherit;
+
+  transition: box-shadow 300ms ease-out;
+
+  &::placeholder {
+    color: var(--clr-blue-l);
+    font-size: 12px;
+  }
+}
+
+.inputError {
+  position: relative;
+
+  border-top: 1px dashed var(--clr-red);
+  border-right: 2px solid var(--clr-red);
+  border-bottom: 1px dashed var(--clr-red);
+  border-left: 2px solid var(--clr-red);
+}
+
+.input:focus {
+  border-top: 2px solid var(--clr-blue);
+  border-right: 2px solid var(--clr-blue);
+  border-bottom: 2px solid var(--clr-blue);
+  border-left: 2px solid var(--clr-blue);
+
+  outline: none;
+}
+
+.iconContainer {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (width >= 768px) {
+  .input {
+    height: 42px;
+  }
+}

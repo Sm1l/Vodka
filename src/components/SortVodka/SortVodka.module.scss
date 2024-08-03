@@ -9,8 +9,8 @@
 }
 
 .select {
-  height: 42px;
-  padding: 8px 0px;
+  height: 32px;
+  padding: 4px 4px;
 
   color: var(--clr-blue);
 
@@ -19,6 +19,7 @@
 
   background-color: inherit;
 
+  appearance: none;
   transition: box-shadow 300ms ease-out;
 
   &:focus {
@@ -28,5 +29,11 @@
     border-left: 2px solid var(--clr-blue);
 
     outline: none;
+  }
+}
+
+@media (width >= 768px) {
+  .select {
+    height: 42px;
   }
 }

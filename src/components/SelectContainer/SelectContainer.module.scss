@@ -12,8 +12,8 @@
 
 .select {
   width: 100%;
-  height: 42px;
-  padding: 8px 8px;
+  height: 32px;
+  padding: 4px;
 
   color: var(--clr-blue);
 
@@ -35,5 +35,11 @@
     border-left: 2px solid var(--clr-blue);
 
     outline: none;
+  }
+}
+
+@media (width >= 768px) {
+  .select {
+    height: 42px;
   }
 }
