@@ -16,11 +16,11 @@ const VodkaCollectionCard: React.FC<VodkaCollectionCardProps> = ({ vodka, setCol
       <div className={styles.vodkaInfo}>
         <div className={styles.infoContainer}>
           <p>
-            <span className={styles.miniTitle}>Название: </span>
+            {/* <span className={styles.miniTitle}>Название: </span> */}
             {vodka.name}
           </p>
           <p>
-            <span className={styles.miniTitle}>Изменено: </span>
+            {/* <span className={styles.miniTitle}>Изменено: </span> */}
             {dateToLocale(vodka.date)}
           </p>
         </div>
