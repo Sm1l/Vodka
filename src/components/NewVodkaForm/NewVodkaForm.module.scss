@@ -2,11 +2,14 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: 100%;
-  border-radius: var(--brdr-rad);
-  background-color: var(--dark-color-surface-100);
   padding: 10px;
+
+  border-radius: var(--brdr-rad);
+
+  background-color: var(--dark-color-surface-100);
 }

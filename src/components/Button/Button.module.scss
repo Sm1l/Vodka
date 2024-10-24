@@ -40,7 +40,9 @@
     &:hover {
       &:enabled {
         font-weight: normal;
+
         background-color: var(--dark-color-tag-green-color);
+
         transition: all 300ms ease-out;
 
         & .arrow path {

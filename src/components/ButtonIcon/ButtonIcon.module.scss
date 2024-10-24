@@ -3,9 +3,9 @@
   gap: 4px;
   justify-content: center;
   align-items: center;
+
   width: 30px;
   height: 30px;
-
   padding: 4px;
 
   border: 2px solid var(--dark-color-tag-green-border);
@@ -20,21 +20,25 @@
 }
 
 .red {
-  background-color: transparent;
   border: 2px solid var(--dark-color-tag-red-color);
+
+  background-color: transparent;
 }
 
 .lightgreen {
-  background-color: transparent;
   border: 2px solid var(--dark-color-tag-green-color);
+
+  background-color: transparent;
 }
 
 @media (hover: hover) {
   .buttonIcon:hover {
     background-color: var(--dark-color-tag-green-color);
+
     &.red {
       background-color: var(--dark-color-tag-red-border);
     }
+
     &.lightgreen {
       background-color: var(--dark-color-tag-green-border);
     }

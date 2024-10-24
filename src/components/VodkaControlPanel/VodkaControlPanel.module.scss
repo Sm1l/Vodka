@@ -4,11 +4,12 @@
   gap: 4px;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
 
-  padding: var(--pd);
-  background-color: var(--dark-color-surface-100);
   width: 100%;
+  margin: 0 auto;
+  padding: var(--pd);
 
   border-radius: var(--brdr-rad);
+
+  background-color: var(--dark-color-surface-100);
 }

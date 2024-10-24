@@ -21,10 +21,12 @@
   background-color: inherit;
 
   appearance: none;
+
   transition: box-shadow 300ms ease-out;
 
   &:focus {
     border: 2px solid var(--dark-color-tag-green-border);
+
     outline: none;
   }
 }

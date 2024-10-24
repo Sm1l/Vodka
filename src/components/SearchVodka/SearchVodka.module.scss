@@ -1,8 +1,9 @@
 .searchVodka {
   display: flex;
   gap: 10px;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
   width: 100%;
 }
 
@@ -39,11 +40,12 @@
 }
 
 .iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 30px;
   height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 @media (width >= 768px) {
