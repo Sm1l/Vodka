@@ -9,13 +9,14 @@
 }
 
 .select {
-  height: 32px;
+  height: 40px;
   padding: 4px 4px;
 
-  color: var(--clr-blue);
+  color: var(--dark-color-tag-green-color);
 
   border: none;
   border: 2px solid transparent;
+  border-radius: var(--brdr-rad-min);
 
   background-color: inherit;
 
@@ -23,17 +24,13 @@
   transition: box-shadow 300ms ease-out;
 
   &:focus {
-    border-top: 2px solid var(--clr-blue);
-    border-right: 2px solid var(--clr-blue);
-    border-bottom: 2px solid var(--clr-blue);
-    border-left: 2px solid var(--clr-blue);
-
+    border: 2px solid var(--dark-color-tag-green-border);
     outline: none;
   }
 }
 
 @media (width >= 768px) {
   .select {
-    height: 42px;
+    height: 52px;
   }
 }

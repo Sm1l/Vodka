@@ -8,27 +8,35 @@
 
   padding: 4px;
 
-  border: 2px solid var(--clr-blue);
+  border: 2px solid var(--dark-color-tag-green-border);
   border-radius: 4px;
   aspect-ratio: 1 / 1;
 
   transition: all 300ms ease-out;
 }
 
-.white {
+.green {
   background-color: transparent;
 }
 
 .red {
-  background-color: var(--clr-red-l);
+  background-color: transparent;
+  border: 2px solid var(--dark-color-tag-red-color);
 }
 
-.green {
-  background-color: var(--clr-green-l);
+.lightgreen {
+  background-color: transparent;
+  border: 2px solid var(--dark-color-tag-green-color);
 }
 
 @media (hover: hover) {
   .buttonIcon:hover {
-    background-color: var(--clr-blue-l);
+    background-color: var(--dark-color-tag-green-color);
+    &.red {
+      background-color: var(--dark-color-tag-red-border);
+    }
+    &.lightgreen {
+      background-color: var(--dark-color-tag-green-border);
+    }
   }
 }

@@ -29,7 +29,7 @@ const CardButtonsContainer: React.FC<CardButtonsContainerProps> = ({ vodka, setC
       {deleteModal && (
         <div className={styles.deleteModal}>
           <ButtonIcon icon={MdDone} color="red" onClick={() => handleButtonDeleteClick(vodka.id)} />
-          <ButtonIcon icon={MdClose} color="green" onClick={() => setDeleteModal(false)} />
+          <ButtonIcon icon={MdClose} color="lightgreen" onClick={() => setDeleteModal(false)} />
         </div>
       )}
     </div>

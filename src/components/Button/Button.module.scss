@@ -8,26 +8,19 @@
   width: 100%;
   padding: 10px 12px;
 
-  color: var(--clr-white);
+  border-radius: var(--brdr-rad);
 
-  border: 2px solid var(--clr-blue);
-  border-radius: 4px;
-
-  background-color: var(--clr-blue);
+  background-color: var(--dark-color-tag-green-border);
 
   transition: all 300ms ease-out;
 
   &:disabled {
-    border: 2px solid var(--clr-blue-l);
-
-    background-color: var(--clr-blue-l);
+    background-color: var(--dark-color-tag-green-color);
   }
 }
 
 .buttonActive {
-  color: var(--clr-blue);
-
-  background-color: var(--clr-blue);
+  background-image: var(--bgr-img-g);
 }
 
 @media (width >= 768px) {
@@ -37,7 +30,7 @@
 }
 
 .arrow path {
-  fill: var(--clr-blue);
+  fill: var(--dark-color-tag-green-color);
 
   transition: fill 300ms ease-out;
 }
@@ -47,7 +40,7 @@
     &:hover {
       &:enabled {
         font-weight: normal;
-
+        background-color: var(--dark-color-tag-green-color);
         transition: all 300ms ease-out;
 
         & .arrow path {
@@ -56,22 +49,6 @@
           transition: fill 300ms ease-out;
         }
       }
-    }
-
-    &:focus {
-      outline: none;
-
-      // box-shadow: var(--shadow-lavender);
-    }
-
-    &:active {
-      border: 2px solid var(--clr-blue);
-    }
-
-    &:active .arrow path {
-      fill: var(--clr-blue);
-
-      transition: fill 300ms ease-out;
     }
   }
 }

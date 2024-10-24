@@ -1,26 +1,24 @@
 .vodkaCollectionCard {
-  display: flex;
-  grid-template-columns: auto 1fr;
+  display: grid;
+  grid-template-columns: auto minmax(140px, 1fr);
   gap: 8px;
   align-items: flex-start;
 
   width: 100%;
   height: 100%;
-  padding: 4px 8px;
+  padding: 10px;
 
   text-align: start;
 
-  border-top: 1px dashed var(--clr-blue-l);
-  border-right: 2px solid var(--clr-blue-l);
-  border-bottom: 1px dashed var(--clr-blue-l);
-  border-left: 2px solid var(--clr-blue-l);
   border-radius: var(--brdr-rad);
+  background-color: var(--dark-color-background);
+  overflow: hidden;
 }
 
 .vodkaInfo {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 10px;
   justify-content: center;
   align-items: flex-start;
 
@@ -32,11 +30,31 @@
   overflow: hidden;
 }
 
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .miniTitle {
   font-weight: 500;
 }
 
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--brdr-rad);
+  overflow: hidden;
+}
+
 .image {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--brdr-rad);
 }

@@ -1,26 +1,19 @@
 .cardButtonsContainer {
   position: relative;
-
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-
-  height: 100%;
+  width: 100%;
 }
 
 .deleteModal {
   position: absolute;
+  top: 0;
+  left: 44px;
+  z-index: 2;
 
   display: flex;
-  flex-direction: column;
   gap: 8px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   width: 100%;
   height: 100%;
-
-  border-radius: 4px;
 }

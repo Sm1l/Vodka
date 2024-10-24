@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { saveImgToFirebase } from "@/firebase/saveImgToFirebase";
 import styles from "./InputFile.module.scss";
+import { Button } from "../Button";
 
 interface InputFileProps {
   imageUrl: string;
@@ -9,6 +10,7 @@ interface InputFileProps {
 
 const InputFile: React.FC<InputFileProps> = ({ imageUrl, onFileUpload }) => {
   const [loading, setLoading] = useState<boolean>(false);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = event.target.files?.[0];
@@ -29,11 +31,27 @@ const InputFile: React.FC<InputFileProps> = ({ imageUrl, onFileUpload }) => {
     }
   };
 
+  const handleButtonClick = () => {
+    fileInputRef.current?.click();
+  };
+
   return (
     <div className={styles.inputFile}>
-      <input type="file" className={styles.input} accept="image/*" onChange={handleChange} disabled={loading} />
+      <input
+        type="file"
+        ref={fileInputRef}
+        className={styles.input}
+        accept="image/*"
+        onChange={handleChange}
+        disabled={loading}
+      />
+      <Button type="button" arrow={false} disabled={loading} text="Выбрать изображение" onClick={handleButtonClick} />
       {loading && <div className={styles.loader}>Загрузка...</div>}
-      {imageUrl !== "" && <img className={styles.image} src={imageUrl} alt="Uploaded image" />}
+      {imageUrl !== "" && (
+        <div className={styles.imageContainer}>
+          <img className={styles.image} src={imageUrl} alt="Uploaded image" />
+        </div>
+      )}
     </div>
   );
 };

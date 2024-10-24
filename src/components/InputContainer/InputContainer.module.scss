@@ -1,7 +1,7 @@
 .inputContainer {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   align-items: flex-start;
 
   width: 100%;
@@ -11,40 +11,30 @@
   display: block;
 
   width: 100%;
-  height: 32px;
+  height: 40px;
   padding: 4px;
 
   border: none;
-  border-top: 1px dashed var(--clr-blue-l);
-  border-right: 2px solid var(--clr-blue-l);
-  border-bottom: 1px dashed var(--clr-blue-l);
-  border-left: 2px solid var(--clr-blue-l);
-  border-radius: var(--brdr-rad);
+  border-radius: var(--brdr-rad-min);
 
-  background-color: inherit;
+  background-color: var(--dark-color-background);
 
   transition: box-shadow 300ms ease-out;
 
   &::placeholder {
-    color: var(--clr-blue-l);
-    font-size: 12px;
+    color: var(--dark-color-tag-green-color);
+    font-size: 16px;
   }
 }
 
 .inputError {
   position: relative;
 
-  border-top: 1px dashed var(--clr-red);
-  border-right: 2px solid var(--clr-red);
-  border-bottom: 1px dashed var(--clr-red);
-  border-left: 2px solid var(--clr-red);
+  border: 2px solid var(--dark-color-tag-red-color);
 }
 
 .input:focus {
-  border-top: 2px solid var(--clr-blue);
-  border-right: 2px solid var(--clr-blue);
-  border-bottom: 2px solid var(--clr-blue);
-  border-left: 2px solid var(--clr-blue);
+  border: 2px solid var(--dark-color-tag-green-border);
 
   outline: none;
 }
@@ -59,7 +49,7 @@
 .error span {
   display: block;
 
-  color: var(--clr-red);
+  color: var(--dark-color-tag-red-color);
   font-size: 10px;
 }
 
@@ -78,6 +68,6 @@
 
 @media (width >= 768px) {
   .input {
-    height: 42px;
+    height: 52px;
   }
 }
