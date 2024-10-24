@@ -4,40 +4,54 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import styles from "./NewVodkaForm.module.scss";
 import { InputContainer } from "../InputContainer";
 import { Button } from "../Button";
-import { SelectContainer } from "../SelectContainer";
-import { countries } from "@/app/data/countries";
-import { TCountriesValues } from "@/app/data/countries";
+// import { SelectContainer } from "../SelectContainer";
+// import { countries } from "@/app/data/countries";
+// import { TCountriesValues } from "@/app/data/countries";
 import { saveDataToFirebase } from "@/firebase/saveDataToFirebase";
 import { NewVodkaSent } from "../NewVodkaSent";
+import { InputFile } from "../InputFile";
+import { REG_EXP_FIRST_LETTER_CAPITAL } from "@/helpers/regexp";
 
 export type TVodkaForm = {
   id: string;
-  brand: string;
-  name?: string;
-  producer: string;
-  country: TCountriesValues;
-  city: string;
+  name: string;
+  imageUrl: string;
+  // brand: string;
+  // producer: string;
+  // country: TCountriesValues;
+  // city: string;
 };
 
 interface NewVodkaFormProps {}
 
 const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
   const [dataIsSent, setDataIsSent] = useState<boolean>(false);
-  const REG_EXP_FIRST_LETTER_CAPITAL = /^[A-ZА-ЯЁ0-9][a-zA-Zа-яёА-ЯЁ0-9'" ]*(\s+[a-zA-Zа-яёА-ЯЁ0-9'" ]+)*$/;
-  const REG_EXP_FIRST_LETTER_CAPITAL_ONLY_LETTERS = /^[A-ZА-Я][a-zA-Zа-яА-Я]*(\s[a-zA-Zа-яА-Я]+)*$/;
+  const [imageUrl, setImageUrl] = useState<string>("");
+
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors, isValid },
   } = useForm<TVodkaForm>({ mode: "onBlur" });
 
+  const handleFileUpload = (url: string) => {
+    setImageUrl(url);
+    setValue("imageUrl", url);
+  };
+
   const onSubmit: SubmitHandler<TVodkaForm> = async (data) => {
-    const result = await saveDataToFirebase(data);
+    setIsSubmitting(true);
+    const result = await saveDataToFirebase({ ...data, imageUrl });
     if (result === true) {
       setDataIsSent(true);
     }
     reset();
+    setImageUrl("");
+    setIsSubmitting(false);
   };
 
   return (
@@ -47,18 +61,26 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
       ) : (
         <form className={styles.newVodkaForm} onSubmit={handleSubmit(onSubmit)}>
           <InputContainer
-            inputName="Бренд"
-            inputId="brand"
-            inputPlaceholder="Введите название бренда"
+            inputName="Название"
+            inputId="name"
+            inputPlaceholder="Введите название"
             autoComplete="off"
             inputType="text"
-            register={register("brand", {
+            register={register("name", {
               required: "Это поле обязательно",
               pattern: { value: REG_EXP_FIRST_LETTER_CAPITAL, message: "Первая буква заглавная" },
             })}
-            error={errors.brand}
+            error={errors.name}
           />
-          <InputContainer
+          <InputFile onFileUpload={handleFileUpload} imageUrl={imageUrl} />
+          {errors.imageUrl && <p className={styles.error}>Изображение обязательно!</p>}
+          <Button
+            type="submit"
+            text={isSubmitting ? "Загрузка..." : "Добавить"}
+            arrow={false}
+            disabled={!isValid || !imageUrl || isSubmitting}
+          />
+          {/* <InputContainer
             inputName="Название"
             inputId="subbrand"
             inputPlaceholder="Введите название (необязательное поле)"
@@ -68,8 +90,8 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
               pattern: { value: REG_EXP_FIRST_LETTER_CAPITAL, message: "Первая буква заглавная" },
             })}
             error={errors.name}
-          />
-          <InputContainer
+          /> */}
+          {/* <InputContainer
             inputName="Изготовитель"
             inputId="producer"
             inputPlaceholder="Введите фирму изготовителя"
@@ -81,9 +103,9 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
               pattern: { value: REG_EXP_FIRST_LETTER_CAPITAL, message: "Первая буква заглавная" },
             })}
             error={errors.producer}
-          />
-          <SelectContainer inputId="country" inputName="Страна" register={register("country")} options={countries} />
-          <InputContainer
+          /> */}
+          {/* <SelectContainer inputId="country" inputName="Страна" register={register("country")} options={countries} /> */}
+          {/* <InputContainer
             inputName="Город"
             inputId="city"
             inputPlaceholder="Введите город"
@@ -99,8 +121,7 @@ const NewVodkaForm: React.FC<NewVodkaFormProps> = () => {
               minLength: { value: 2, message: "Минимум 2 символа" },
             })}
             error={errors.city}
-          />
-          <Button type="submit" text="Добавить" arrow={false} disabled={!isValid} />
+          /> */}
         </form>
       )}
     </>

@@ -14,13 +14,13 @@
   padding: 4px 8px;
 
   border: none;
-  border-top: 1px dashed var(--clr-blue-l);
-  border-right: 2px solid var(--clr-blue-l);
-  border-bottom: 1px dashed var(--clr-blue-l);
-  border-left: 2px solid var(--clr-blue-l);
-  border-radius: var(--brdr-rad);
+  // border-top: 1px dashed var(--clr-blue-l);
+  // border-right: 2px solid var(--clr-blue-l);
+  // border-bottom: 1px dashed var(--clr-blue-l);
+  // border-left: 2px solid var(--clr-blue-l);
+  border-radius: var(--brdr-rad-min);
 
-  background-color: inherit;
+  background-color: var(--dark-color-background);
 
   transition: box-shadow 300ms ease-out;
 

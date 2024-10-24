@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import styles from "./SortVodka.module.scss";
 import { TVodkaCollection } from "@/firebase/saveDataToFirebase";
 
@@ -7,35 +6,25 @@ interface SortVodkaProps {
   vodkaCollection: TVodkaCollection[];
   setSortedVodkaCollection: React.Dispatch<React.SetStateAction<TVodkaCollection[] | []>>;
 }
+
 type TSortOrder = "asc" | "desc";
-type TOptionValues = "brand-asc" | "brand-desc" | "producer-asc" | "producer-desc";
+type TOptionValues = "name-asc" | "name-desc" | "date-asc" | "date-desc";
 type TOptionNames =
-  | "бренду (по возрастанию)"
-  | "бренду (по убыванию)"
-  | "изготовителю (по возрастанию)"
-  | "изготовителю (по убыванию)";
+  | "названию (по возрастанию)"
+  | "названию (по убыванию)"
+  | "дате (по возрастанию)"
+  | "дате (по убыванию)";
 
 const SortVodka: React.FC<SortVodkaProps> = ({ vodkaCollection, setSortedVodkaCollection }) => {
-  const [sortOption, setSortOption] = useState<TOptionValues>("brand-asc");
+  const [sortOption, setSortOption] = useState<TOptionValues>("name-asc");
+
   const options: { name: TOptionNames; value: TOptionValues }[] = [
-    { name: "бренду (по возрастанию)", value: "brand-asc" },
-    { name: "бренду (по убыванию)", value: "brand-desc" },
-    { name: "изготовителю (по возрастанию)", value: "producer-asc" },
-    { name: "изготовителю (по убыванию)", value: "producer-desc" },
+    { name: "названию (по возрастанию)", value: "name-asc" },
+    { name: "названию (по убыванию)", value: "name-desc" },
+    { name: "дате (по возрастанию)", value: "date-asc" },
+    { name: "дате (по убыванию)", value: "date-desc" },
   ];
 
-  const nameToValue = (name: TOptionNames) => {
-    switch (name) {
-      case "бренду (по возрастанию)":
-        return "brand-asc";
-      case "бренду (по убыванию)":
-        return "brand-desc";
-      case "изготовителю (по возрастанию)":
-        return "producer-asc";
-      case "изготовителю (по убыванию)":
-        return "producer-desc";
-    }
-  };
   const sortVodkaCollection = (key: keyof TVodkaCollection, order: TSortOrder) => {
     const sorted = vodkaCollection.toSorted((a, b) => {
       const aValue = a[key];
@@ -66,10 +55,11 @@ const SortVodka: React.FC<SortVodkaProps> = ({ vodkaCollection, setSortedVodkaCo
       <select
         className={styles.select}
         id="sort"
-        onChange={(e) => setSortOption(nameToValue(e.target.value as TOptionNames))}
+        onChange={(e) => setSortOption(e.target.value as TOptionValues)}
+        value={sortOption}
       >
         {options.map((option) => (
-          <option key={option.value} value={option.name}>
+          <option key={option.value} value={option.value}>
             {option.name}
           </option>
         ))}

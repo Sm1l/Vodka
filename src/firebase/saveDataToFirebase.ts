@@ -12,12 +12,13 @@ export const saveDataToFirebase = async (data: TVodkaForm): Promise<true | { err
 
     const vodkaData: TVodkaCollection = {
       id: newId,
-      brand: data.brand,
+      // brand: data.brand,
       name: data.name,
       date: Date.now(),
-      producer: data.producer,
-      country: data.country,
-      city: data.city,
+      // producer: data.producer,
+      // country: data.country,
+      imageUrl: data.imageUrl,
+      // city: data.city,
       isEdited: false,
     };
 

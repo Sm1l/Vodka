@@ -14,7 +14,7 @@ const SearchVodka: React.FC<SearchVodkaProps> = ({ sortedVodkaCollection, setFil
 
   useEffect(() => {
     const filtered = sortedVodkaCollection.filter((vodka) =>
-      vodka.brand.toLowerCase().includes(searchTerm.toLowerCase())
+      vodka.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredVodkaCollection(filtered);
   }, [searchTerm, sortedVodkaCollection, setFilteredVodkaCollection]);
@@ -24,7 +24,7 @@ const SearchVodka: React.FC<SearchVodkaProps> = ({ sortedVodkaCollection, setFil
       <input
         className={styles.input}
         type="text"
-        placeholder="Бренд..."
+        placeholder="Название..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

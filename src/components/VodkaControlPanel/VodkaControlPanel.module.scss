@@ -6,9 +6,9 @@
   align-items: center;
   margin: 0 auto;
 
-  padding: 10px;
-
-  border: 1px dashed var(--clr-blue);
-  border-radius: 4px;
+  padding: var(--pd);
+  background-color: var(--dark-color-surface-100);
   width: 100%;
+
+  border-radius: var(--brdr-rad);
 }

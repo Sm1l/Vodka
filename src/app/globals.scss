@@ -13,17 +13,16 @@ body {
   width: 100%;
   min-height: 100dvh;
 
-  color: var(--clr-blue-d);
-  font-weight: 300;
+  color: var(--dark-color-text-primary);
+  font-weight: 400;
   font-family: Gilroy, system-ui, sans-serif; /* Основной шрифт */
 
-  background-color: var(--clr-white);
-  background-image: var(--bgr-img-w);
+  background-color: var(--dark-color-background);
 
   @media (hover: hover) {
     a {
       &:hover {
-        color: var(--clr-blue-l);
+        color: var(--dark-color-tag-green-color);
 
         transition: all 300ms ease-out;
       }
@@ -70,20 +69,20 @@ body {
 
   @media (hover: hover) {
     button:focus {
-      outline: 1px dotted var(--clr-blue-l);
+      outline: 1px dotted var(--dark-color-tag-green-color);
     }
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   p,
@@ -162,7 +161,7 @@ body {
     text-decoration: none;
 
     &:focus {
-      outline: 1px dotted var(--clr-blue-l);
+      outline: 1px dotted var(--dark-color-tag-green-color);
     }
   }
 }
