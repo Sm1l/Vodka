@@ -10,7 +10,6 @@ interface SearchVodkaProps {
 
 const SearchVodka: React.FC<SearchVodkaProps> = ({ sortedVodkaCollection, setFilteredVodkaCollection }) => {
   const [searchTerm, setSearchTerm] = React.useState("");
-  console.log(searchTerm);
 
   useEffect(() => {
     const filtered = sortedVodkaCollection.filter((vodka) =>
