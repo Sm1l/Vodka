@@ -67,12 +67,6 @@ body {
     }
   }
 
-  @media (hover: hover) {
-    button:focus {
-      outline: 1px dotted var(--dark-color-tag-green-color);
-    }
-  }
-
   h1 {
     font-size: 32px;
   }
@@ -138,7 +132,7 @@ body {
     cursor: pointer;
 
     &:focus {
-      outline: none;
+      outline: 2px solid var(--dark-color-tag-green-color);
     }
 
     &:disabled {
@@ -161,7 +155,13 @@ body {
     text-decoration: none;
 
     &:focus {
-      outline: 1px dotted var(--dark-color-tag-green-color);
+      outline: none;
     }
+  }
+}
+
+@media (hover: none) {
+  button:focus {
+    outline: none;
   }
 }
