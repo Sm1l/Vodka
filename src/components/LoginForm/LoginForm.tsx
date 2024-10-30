@@ -1,6 +1,6 @@
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { HEDIN_ID } from "@/app/data/hedin";
+import { HEDIN_ID, KONSTANTIN_ID } from "@/app/data/hedin";
 
 import { loginWithFirebase } from "@/firebase/loginWithFirebase";
 import { InputContainer } from "../InputContainer";
@@ -30,7 +30,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsHedin }) => {
       alert(`Ошибка: ${result.error}`);
     } else if (result.user) {
       console.log(result.user);
-      if (result.user.uid === HEDIN_ID) {
+      if (result.user.uid === HEDIN_ID || result.user.uid === KONSTANTIN_ID) {
         setIsHedin(true);
       }
     }

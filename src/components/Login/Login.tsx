@@ -11,7 +11,7 @@ interface LoginProps {
 const Login: React.FC<LoginProps> = ({ setIsHedin }) => {
   return (
     <div className={styles.login}>
-      <h3>Эй, погоди , сначала авторизуйся!</h3>
+      <h2>Хедин, это ты?</h2>
       <LoginForm setIsHedin={setIsHedin} />
     </div>
   );

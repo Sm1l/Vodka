@@ -11,7 +11,7 @@ const HomeContainer: React.FC<HomeContainerProps> = () => {
   const [isHedin, setIsHedin] = useState<boolean>(false);
   return (
     <div className={styles.homeContainer}>
-      {!isHedin ? <Vodka /> : <Login setIsHedin={setIsHedin} />}
+      {isHedin ? <Vodka /> : <Login setIsHedin={setIsHedin} />}
       {/* //!change ! */}
     </div>
   );
