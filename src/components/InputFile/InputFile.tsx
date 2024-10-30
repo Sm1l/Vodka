@@ -39,7 +39,7 @@ const InputFile: React.FC<InputFileProps> = ({ imageUrl, onFileUpload }) => {
     <div className={styles.inputFile}>
       <input
         type="file"
-        capture="environment"
+        // capture="environment"
         ref={fileInputRef}
         className={styles.input}
         accept="image/*"
