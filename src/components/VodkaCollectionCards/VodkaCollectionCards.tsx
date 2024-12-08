@@ -14,16 +14,21 @@ const VodkaCollectionCards: React.FC<VodkaCollectionCardsProps> = ({
   setCollectionIsChanged,
 }) => {
   return (
-    <div className={styles.vodkaCollectionCards}>
-      {filteredVodkaCollection.length > 0 ? (
-        <>
-          {filteredVodkaCollection?.map((vodka) => (
-            <VodkaCollectionCard vodka={vodka} key={vodka.id} setCollectionIsChanged={setCollectionIsChanged} />
-          ))}
-        </>
-      ) : (
-        <p>Коллекция водочки пока пуста!</p>
-      )}
+    <div className={styles.vodkaCollectionCardsContainer}>
+      <h2>
+        Общее количество водочки: <span className={styles.vodkaCount}>{filteredVodkaCollection.length} </span>
+      </h2>
+      <div className={styles.vodkaCollectionCards}>
+        {filteredVodkaCollection.length > 0 ? (
+          <>
+            {filteredVodkaCollection?.map((vodka) => (
+              <VodkaCollectionCard vodka={vodka} key={vodka.id} setCollectionIsChanged={setCollectionIsChanged} />
+            ))}
+          </>
+        ) : (
+          <p>Коллекция водочки пока пуста!</p>
+        )}
+      </div>
     </div>
   );
 };
