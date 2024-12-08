@@ -15,9 +15,9 @@ const VodkaCollectionCards: React.FC<VodkaCollectionCardsProps> = ({
 }) => {
   return (
     <div className={styles.vodkaCollectionCardsContainer}>
-      <h2>
+      <h3>
         Общее количество водочки: <span className={styles.vodkaCount}>{filteredVodkaCollection.length} </span>
-      </h2>
+      </h3>
       <div className={styles.vodkaCollectionCards}>
         {filteredVodkaCollection.length > 0 ? (
           <>
