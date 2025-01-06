@@ -9,7 +9,7 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <footer className={styles.footer}>
       <Container>
-        <p>© 2024 Водочка Хедина</p>
+        <p>© 2025 Водочка Хедина</p>
       </Container>
     </footer>
   );
