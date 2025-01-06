@@ -1,0 +1,51 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--dark-color-surface-opacity);
+
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 90%;
+  max-height: 90%;
+  padding: 20px;
+
+  border-radius: var(--brdr-rad);
+
+  background-color: var(--dark-color-background);
+}
+
+.newVodkaForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+
+  width: 100%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
