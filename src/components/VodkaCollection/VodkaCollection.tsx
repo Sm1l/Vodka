@@ -5,9 +5,11 @@ import { getDataFromFirebase } from "@/firebase/getDataFromFirebase";
 import { TVodkaCollection } from "@/firebase/saveDataToFirebase";
 import { VodkaCollectionCards } from "../VodkaCollectionCards";
 import { VodkaControlPanel } from "../VodkaControlPanel";
-interface VodkaCollectionProps {}
+interface VodkaCollectionProps {
+  controlButtons?: boolean;
+}
 
-const VodkaCollection: React.FC<VodkaCollectionProps> = () => {
+const VodkaCollection: React.FC<VodkaCollectionProps> = ({ controlButtons }) => {
   const [vodkaCollection, setVodkaCollection] = useState<TVodkaCollection[] | []>([]);
   const [sortedVodkaCollection, setSortedVodkaCollection] = useState<TVodkaCollection[] | []>([]);
   const [filteredVodkaCollection, setFilteredVodkaCollection] = useState<TVodkaCollection[] | []>([]);
@@ -37,8 +39,7 @@ const VodkaCollection: React.FC<VodkaCollectionProps> = () => {
 
   return (
     <div className={styles.vodkaCollection}>
-      <h3>Моя коллекция водочки!</h3>
-
+      {controlButtons && <h3>Моя коллекция водочки!</h3>}
       {loading ? (
         <p>Подожди немного, я уже загружаю твою коллекцию водочки...</p>
       ) : (
@@ -52,6 +53,7 @@ const VodkaCollection: React.FC<VodkaCollectionProps> = () => {
           <VodkaCollectionCards
             filteredVodkaCollection={filteredVodkaCollection}
             setCollectionIsChanged={setCollectionIsChanged}
+            controlButtons={controlButtons}
           />
         </>
       )}

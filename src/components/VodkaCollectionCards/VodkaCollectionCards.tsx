@@ -7,11 +7,13 @@ import { VodkaCollectionCard } from "../VodkaCollectionCard";
 interface VodkaCollectionCardsProps {
   filteredVodkaCollection: TVodkaCollection[];
   setCollectionIsChanged: React.Dispatch<React.SetStateAction<boolean>>;
+  controlButtons?: boolean;
 }
 
 const VodkaCollectionCards: React.FC<VodkaCollectionCardsProps> = ({
   filteredVodkaCollection,
   setCollectionIsChanged,
+  controlButtons,
 }) => {
   return (
     <div className={styles.vodkaCollectionCardsContainer}>
@@ -22,7 +24,12 @@ const VodkaCollectionCards: React.FC<VodkaCollectionCardsProps> = ({
         {filteredVodkaCollection.length > 0 ? (
           <>
             {filteredVodkaCollection?.map((vodka) => (
-              <VodkaCollectionCard vodka={vodka} key={vodka.id} setCollectionIsChanged={setCollectionIsChanged} />
+              <VodkaCollectionCard
+                vodka={vodka}
+                key={vodka.id}
+                setCollectionIsChanged={setCollectionIsChanged}
+                controlButtons={controlButtons}
+              />
             ))}
           </>
         ) : (
