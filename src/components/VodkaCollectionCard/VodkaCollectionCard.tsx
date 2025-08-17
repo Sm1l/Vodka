@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 
-import styles from "./VodkaCollectionCard.module.scss";
 import { TVodkaCollection } from "@/firebase/saveDataToFirebase";
-import { CardButtonsContainer } from "../CardButtonsContainer";
 import { dateToLocale } from "@/helpers/dateToLocale";
+import { CardButtonsContainer } from "../CardButtonsContainer";
 import { Modal } from "../Modal";
+import styles from "./VodkaCollectionCard.module.scss";
 
 interface VodkaCollectionCardProps {
   vodka: TVodkaCollection;
   setCollectionIsChanged: React.Dispatch<React.SetStateAction<boolean>>;
+  controlButtons?: boolean;
 }
 
-const VodkaCollectionCard: React.FC<VodkaCollectionCardProps> = ({ vodka, setCollectionIsChanged }) => {
+const VodkaCollectionCard: React.FC<VodkaCollectionCardProps> = ({
+  vodka,
+  setCollectionIsChanged,
+  controlButtons = true,
+}) => {
   const [modalIsVisible, setModalIsVisible] = useState<boolean>(false);
 
   const modalHandleClick = () => {
@@ -23,9 +28,9 @@ const VodkaCollectionCard: React.FC<VodkaCollectionCardProps> = ({ vodka, setCol
         <div className={styles.vodkaInfo}>
           <div className={styles.infoContainer}>
             <p>{vodka.name}</p>
-            <p>{dateToLocale(vodka.date)}</p>
+            {controlButtons && <p>{dateToLocale(vodka.date)}</p>}
           </div>
-          <CardButtonsContainer vodka={vodka} setCollectionIsChanged={setCollectionIsChanged} />
+          {controlButtons && <CardButtonsContainer vodka={vodka} setCollectionIsChanged={setCollectionIsChanged} />}
         </div>
 
         <button className={styles.imageContainer} onClick={modalHandleClick}>
